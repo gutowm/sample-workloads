@@ -3,7 +3,7 @@ import torch
 import time
 
 # Define matrix size (N x N)
-MATRIX_SIZE = 10000
+MATRIX_SIZE = 3000
 
 print(f"Creating {MATRIX_SIZE}x{MATRIX_SIZE} matrices...")
 
@@ -23,7 +23,7 @@ print(f"CPU computation done in {cpu_time:.4f} seconds")
 # --- GPU computation ---
 if torch.cuda.is_available():
     device = torch.device("cuda")
-    print("GPU is available. Performing computation on GPU...")
+    print("Performing same computation on GPU...")
 
     # Move tensors to GPU
     A_gpu = A_cpu.to(device)
