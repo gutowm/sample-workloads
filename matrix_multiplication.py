@@ -3,7 +3,7 @@ import torch
 import time
 
 # Define matrix size (N x N)
-MATRIX_SIZE = 3000
+MATRIX_SIZE = 10000
 
 print(f"Creating {MATRIX_SIZE}x{MATRIX_SIZE} matrices...")
 
