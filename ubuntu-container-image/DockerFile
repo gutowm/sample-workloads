@@ -1,14 +1,16 @@
 # Base 
 FROM ubuntu:22.04
 
-# Install git (if not already installed)
-RUN apt-get update && apt-get install -y python && apt-get clean
+# Update and install Python
+RUN apt-get update && \
+    apt-get install -y python3 && \
+    apt-get clean
 
-# Clone the repo
-RUN git clone https://github.com/gutowm/sample-workloads.git
+# Create app directory
+WORKDIR /app
 
-# Set working directory
-WORKDIR /sample-workloads
+# Copy your Python script into the container
+COPY src/main.py .
 
 # Set default command to run Python code
-CMD ["python3", "-c", "print('hello from python in ubuntu container!')"]
+CMD ["python3", "main.py"]
