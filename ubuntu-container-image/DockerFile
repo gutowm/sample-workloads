@@ -1,4 +1,4 @@
-# Base 
+# Base container
 FROM ubuntu:22.04
 
 # Update and install Python
