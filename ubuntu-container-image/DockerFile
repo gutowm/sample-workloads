@@ -1,0 +1,14 @@
+# Base 
+FROM ubuntu:22.04
+
+# Install git (if not already installed)
+RUN apt-get update && apt-get install -y python && apt-get clean
+
+# Clone the repo
+RUN git clone https://github.com/gutowm/sample-workloads.git
+
+# Set working directory
+WORKDIR /sample-workloads
+
+# Set default command to run Python code
+CMD ["python3", "-c", "print('hello from python in ubuntu container!')"]
